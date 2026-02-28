@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /home/michael/Documentos/2026/Primer Semestre/Sistemas Operativos 1/Laboratorio/Práctica 1 Select CMakeLists.txt
