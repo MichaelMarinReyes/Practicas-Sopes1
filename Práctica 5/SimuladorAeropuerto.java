@@ -70,7 +70,6 @@ public class SimuladorAeropuerto {
         System.out.println("\n--- INICIANDO SIMULACIÓN ---");
         flota.forEach(Thread::start);
 
-        // Esperar a que terminen
         if (tipoEscenario == 2) {
             flota.forEach(t -> {
                 try {
@@ -99,8 +98,8 @@ public class SimuladorAeropuerto {
     }
 
     private static void ejecutarAterrizajeDeadlock(String id) {
-        // Al solicitar B y luego A -> orden inverso al despegue, causamos la espera
-        // circular
+        /* Al solicitar B y luego A -> orden inverso al despegue, se causa la espera
+         circular */
         synchronized (TRAMO_B) {
             System.out.println("[" + id + "] RESERVA: Tramo B (Aproximación)");
             pausaAleatoria(500, 1000);
